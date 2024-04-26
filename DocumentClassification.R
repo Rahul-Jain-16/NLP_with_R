@@ -40,7 +40,7 @@ table(nb.test.predict, testdata$V2)
 #write.csv(nb.results, "NBSummary.csv")
 
 
-#Activity 2: Support Vector Machine
+#Support Vector Machine
 #the SVM model: using a different package
 
 install.packages('e1071')

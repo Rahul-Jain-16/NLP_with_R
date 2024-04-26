@@ -1,5 +1,5 @@
 #Please setup the working directory
-setwd("C:/Users/ll1d19/Downloads/MANG6331_TM_SMA")
+setwd(".....")
 
 #Sentiment Scoring
 
@@ -8,20 +8,19 @@ install.packages("twitteR")
 library(twitteR)
 library(tm)
 
-#retreat the saved tweets from the "Downloading Tweets Lab Session"
-az.tweets<-readRDS("data.az")
+az.tweets<-readRDS("data.az") 
 
 
 az.text <- az.tweets$text
 #------------------------------------------------------------------
 
-#loading Hu Liu's opinion lexicon
-hu.liu.pos <- scan("positive-words.txt",what="character", comment.char="");
-hu.liu.neg <- scan("negative-words.txt",what="character", comment.char="");
+#loading Rahul's opinion lexicon
+rj.pos <- scan("positive-words.txt",what="character", comment.char="");
+rj.neg <- scan("negative-words.txt",what="character", comment.char="");
 
 #loading some industry-specific and/or especially emphatic terms
-pos.words <- c(hu.liu.pos, 'prize')
-neg.words <- c(hu.liu.neg, 'late')
+pos.words <- c(rj.pos, 'prize')
+neg.words <- c(rj.neg, 'late')
 
 #function for the score.sentiment
 score.sentiment = function(sentences, pos.words, neg.words, .progress='none')
@@ -39,12 +38,11 @@ score.sentiment = function(sentences, pos.words, neg.words, .progress='none')
     sentence = gsub('[[:punct:]]', '', sentence)
     sentence = gsub('[[:cntrl:]]', '', sentence)
     sentence = gsub('\\d+', '', sentence)
-    # and convert to lower case:
+    # and convert to lowercase:
     sentence = tolower(sentence)
     
     # split into words. str_split is in the stringr package
     word.list = str_split(sentence, '\\s+')
-    # sometimes a list() is one level of hierarchy too much
     words = unlist(word.list)
     
     # compare our words to the dictionaries of positive & negative terms
@@ -72,7 +70,6 @@ mysample=c("You're awesome and I love you", "i hate and hate and hate. so angry.
 result=score.sentiment(mysample, pos.words, neg.words)
 class(result)
 result$score
-
 
 #score the tweets
 az.scores=score.sentiment(az.text,pos.words,neg.words,.progress='text')

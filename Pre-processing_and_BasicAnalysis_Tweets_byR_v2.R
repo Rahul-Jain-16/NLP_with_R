@@ -1,6 +1,5 @@
-#### are notes for myself
 #setup the working directory
-setwd("//soton.ac.uk/...")
+setwd("//...")
 
 #import the necessary packages
 install.packages("stringr")
@@ -21,17 +20,12 @@ library(ggplot2)
 #Set Options
 options(stringasfactors=F)
 
-#If you were not able download the tweets through the previous lab session
-#please retreat the saved tweets from the previous computer lab activity using the following code
-#az.tweets<-readRDS("data.az")
-
 #keep a backup version before pre-processing
 az.tweets.bkup<-az.tweets 
 
 #overview on the top six tweets
 head(az.tweets$text)
 
-##functions from the stringr and qdap packages
 #replace all @amazonUK with @aUK
 az.tweets$text<-gsub('@amazonUK', '@aUK', az.tweets$text, ignore.case=T)
 head(az.tweets$text)

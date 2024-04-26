@@ -1,8 +1,7 @@
 #### are notes for myself
 #setup the working directory
 setwd("//soton.ac.uk/...")
-#please specify the folder you would like to use to keep all your works
-setwd("C:/Users/ll1d19/Downloads/MANG6331_TM_SMA")
+
 #import the necessary packages
 install.packages("stringr")
 install.packages("qdap")

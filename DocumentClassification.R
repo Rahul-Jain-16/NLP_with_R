@@ -1,6 +1,6 @@
 #setup the working directory
 setwd("...")
-setwd("C:/Users/ll1d19/Downloads/MANG6331_TM_SMA")
+
 install.packages("naivebayes")
 library(naivebayes)
 

@@ -1,6 +1,6 @@
 #setup the working directory
 #please specify the folder you would like to use to keep all your works
-setwd("//filestore.soton.ac.uk/users/ms4v09/mydocuments/Teaching/MANG6331/Lab/201920")
+setwd("<Enter value>")
 
 #install packages
 install.packages("rtweet")
@@ -11,10 +11,10 @@ library("rtweet")
 
 
 #copy these values from your twitter app account
-my_API_key <- 'tU34kGlwZ91a5q6JYuEg98CfR'
-my_API_key_secret <- 'e5b15GhTTeUU63HG7BCcBALvp1MSomkg0CigFC6neDwFATKOdT'
-my_access_token <- '458778445-0jEOjbhwrdwqMFDvtmtLNzyA79Lxp19o4SMyUfeN'
-my_access_secret <- 'K0bwfPMsgEI6B3qAKcfeqWkfDU9GG5mD2culsQhyann2x'
+my_API_key <- DELETE FOR SECURITY REASONS
+my_API_key_secret <- DELETE FOR SECURITY REASONS
+my_access_token <- DELETE FOR SECURITY REASONS
+my_access_secret <- DELETE FOR SECURITY REASONS
 
 ##create token
 my_token <-create_token(
@@ -35,14 +35,8 @@ rt <- search_30day("#rstats", n = 300,
                    env_name = "development", toDate = toDate,token = my_token)
 ## End(Not run)
 
-
-
-
-
-
 primevideouk.tweets <- search_fullarchive(
   "@primevideouk", n = 18000, env_name = "testAPI",token = my_token,fromDate = "202012010000", toDate = "202012090000")
-
 
 primevideouk.tweets <- search_tweets(
   "@primevideouk", n = 18000, include_rts = FALSE,lang="en", token = my_token,since = since, until = until)

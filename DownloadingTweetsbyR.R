@@ -18,7 +18,7 @@ my_access_secret <- DELETE FOR SECURITY REASONS
 
 ##create token
 my_token <-create_token(
-  app="MANG6331",
+  app="ENTER VALUE",
   consumer_key=my_API_key,
   consumer_secret=my_API_key_secret,
   access_token=my_access_token,
